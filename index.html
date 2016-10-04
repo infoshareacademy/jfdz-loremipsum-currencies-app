@@ -4,8 +4,23 @@
     <meta charset="UTF-8">
     <title>App Currencies</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="714228051768-i9egh3dupmufu15gfuku94rmg2u9fm3u.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <script>
+        var profile = null;
 
+        function onSignIn(googleUser) {
+            profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+        }
+        console.log(profile);
+    </script>
 </body>
 </html>
