@@ -1,0 +1,27 @@
+.signin {
+  max-width: 400px;
+  min-height: 100px;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+  position: relative;
+
+  header {
+    background-color: #37b8eb;
+
+    .logo {
+      color: #ffffff;
+      text-align: center;
+      font-size: 2rem;
+      padding: 1rem 0;
+    }
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
