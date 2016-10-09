@@ -14,12 +14,12 @@ export default class Header extends Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav>
-                        <NavItem eventKey={1} href="#">Link</NavItem>
-                        <NavItem eventKey={2} href="#">Link</NavItem>
+                        <NavItem eventKey={1} href="#">Currency Exchange</NavItem>
+                        <NavItem eventKey={2} href="#">My Wallet</NavItem>
+                        <NavItem eventKey={3} href="#">User List</NavItem>
                     </Nav>
                     <Nav pullRight>
-                        <NavItem eventKey={1} href="#">Link Right</NavItem>
-                        <NavItem eventKey={2} href="#">Link Right</NavItem>
+                        <NavItem eventKey={1} href="#">LogOut</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
