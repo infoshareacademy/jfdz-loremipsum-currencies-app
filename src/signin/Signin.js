@@ -6,7 +6,7 @@ export default class Signin extends Component {
 
     onSuccess(googleUser) {
         var profile = googleUser.getBasicProfile();
-        console.log(profile);
+        console.log(this.profile);
         console.log('Name: ' + this.profile.getName());
         console.log('Image URL: ' + this.profile.getImageUrl());
         console.log('Email: ' + this.profile.getEmail());
@@ -31,13 +31,13 @@ export default class Signin extends Component {
         return (
           <div className="singin-container">
               <Jumbotron className="signin-jumbotron">
-                  <h1>
+                  <h1
                       Currency Exchange
                   </h1>
                   <p>Sign In with your social account</p>
                   aaa - {this.cos}
                   <p>
-                      <div id="g-signin2"></div>
+                      <div className="g-signin2"></div>
                   </p>
               </Jumbotron>
           </div>
