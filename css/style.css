@@ -1,0 +1,98 @@
+@import 'https://fonts.googleapis.com/css?family=Poppins';
+
+body {
+    background-color: #696969;
+}
+
+/* ------------------------ NAVBAR ------------------------ */
+
+.container {
+    width: 100%;
+    /*margin: 10px auto;*/
+}
+
+nav {
+    margin: 10px 0;
+}
+
+nav.show {
+    display: block;
+}
+
+.btn {
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    float: left;
+    position: relative;
+    padding: 10px 20px;
+    margin-right: 5px;
+    border-radius: 5px;
+    color: #f1f1f1;
+    text-align: center;
+    text-decoration: none;
+    background: #696969; /* Old browsers */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #696969), color-stop(100%, #666));
+    background: -moz-linear-gradient(top, #696969 0%, #666 100%);
+    background: -webkit-linear-gradient(top, #696969 0%, #666 100%);
+    background: -o-linear-gradient(top, #696969 0%, #666 100%);
+    background: -ms-linear-gradient(top, #696969 0%, #666 100%);
+    background: linear-gradient(to bottom, #696969 0%, #666 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#696969', endColorstr='#666',GradientType=0 ); /* IE6-9 */
+}
+
+
+.btn:hover {
+    box-shadow:2px 2px 15px #666 inset;
+}
+.btn:active {
+    top: 2px;
+}
+
+.btn.hide {
+    display: none;
+}
+.btn.open-menu {
+    display: none;
+}
+
+/*@MEDIA*/
+
+@media only screen and (max-width: 960px) {
+
+    .container {width: 100%;}
+
+    nav {
+        display: none;
+        position: absolute;
+        margin: 0;
+        top: 0;
+        width: 100%;
+        background: #696969;
+        padding: 10px 0;
+    }
+
+    .btn {
+        width: 100%;
+        float: none;
+        padding: 20px 0;
+        margin: 5px 0;
+        border-radius: 0;
+    }
+
+    .btn.hide {display: block;}
+    .btn.open-menu {display: block;}
+}
+
+/* ------------------------ KURS WALUT ------------------------ */
+
+#exchange img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* ------------------------ MOJ PORTFEL ------------------------ */
+
+#wallet img{
+    max-width: 100%;
+    height: auto;
+}
