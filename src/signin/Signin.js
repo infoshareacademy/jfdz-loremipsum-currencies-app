@@ -1,37 +1,18 @@
 import React, { Component } from 'react'
+import GoogleLogin from 'react-google-login';
+
 import { Jumbotron } from 'react-bootstrap';
 import './Signin.css';
 
+const success  = (response) => {
+    console.log(response);
+}
+
+const error = (response) => {
+    console.error(response);
+};
+
 export default class Signin extends Component {
-
-    componentWillMount() {
-        this.setState({
-            profile: null
-        });
-
-        this.gapi.signin2.render('g-signin2', {
-            'scope': 'profile email',
-            'width': 340,
-            'height': 80,
-            'longtitle': true,
-            'theme': 'dark',
-            'onsuccess': this.onSuccess,
-            'onfailure': this.onFailure
-        })
-    }
-
-    onSuccess(googleUser) {
-        this.props.profile = googleUser.getBasicProfile();
-        console.log('Name: ' + this.props.profile.getName());
-        console.log('Image URL: ' + this.props.profile.getImageUrl());
-        console.log('Email: ' + this.props.profile.getEmail());
-    }
-
-    onFailure(error) {
-        console.log(error);
-    }
-
-
     render() {
         return (
           <div className="singin-container">
@@ -40,9 +21,14 @@ export default class Signin extends Component {
                       Currency Exchange
                   </h1>
                   <p>Sign In with your social account</p>
-                  <div className="g-signin2"></div>
+                  <GoogleLogin
+                      clientId="714228051768-i9egh3dupmufu15gfuku94rmg2u9fm3u.apps.googleusercontent.com"
+                      buttonText="Sign in with Google+"
+                      onSuccess={success}
+                      onFailure={error} />
               </Jumbotron>
           </div>
         );
     }
 }
+
