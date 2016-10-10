@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>App Currencies</title>
+    <meta name="google-signin-client_id" content="714228051768-i9egh3dupmufu15gfuku94rmg2u9fm3u.apps.googleusercontent.com">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- sign in -->
+    <div class="signin">
+        <header>
+            <h1 class="logo">Monitor kursów walut</h1>
+        </header>
+        <section>
+            <h2>Sign In with your social account</h2>
+        </section>
+        <footer>
+            <p>&copy; LoremIpsum  2016</p>
+        </footer>
+    </div><!-- /sign in -->
+
+    <!--<div id="my-signin2"></div>-->
+
+    <script>
+        var profile = null;
+
+        function onSuccess(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+        }
+        function onFailure(error) {
+            console.log(error);
+        }
+
+        function renderButton() {
+            gapi.signin2.render('my-signin2', {
+                'scope': 'profile email',
+                'width': 340,
+                'height': 80,
+                'longtitle': true,
+                'theme': 'dark',
+                'onsuccess': onSuccess,
+                'onfailure': onFailure,
+            });
+        }
+
+    </script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </body>
 </html>
