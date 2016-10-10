@@ -1,22 +1,14 @@
 import React, { Component } from 'react'
-import { Jumbotron, Button } from 'react-bootstrap';
+import { Jumbotron } from 'react-bootstrap';
 import './Signin.css';
 
 export default class Signin extends Component {
 
-    onSuccess(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log(this.profile);
-        console.log('Name: ' + this.profile.getName());
-        console.log('Image URL: ' + this.profile.getImageUrl());
-        console.log('Email: ' + this.profile.getEmail());
-    }
+    componentWillMount() {
+        this.setState({
+            profile: null
+        });
 
-    onFailure(error) {
-        console.log(error);
-    }
-
-    componentDidMount() {
         this.gapi.signin2.render('g-signin2', {
             'scope': 'profile email',
             'width': 340,
@@ -28,6 +20,18 @@ export default class Signin extends Component {
         })
     }
 
+    onSuccess(googleUser) {
+        this.props.profile = googleUser.getBasicProfile();
+        console.log('Name: ' + this.props.profile.getName());
+        console.log('Image URL: ' + this.props.profile.getImageUrl());
+        console.log('Email: ' + this.props.profile.getEmail());
+    }
+
+    onFailure(error) {
+        console.log(error);
+    }
+
+
     render() {
         return (
           <div className="singin-container">
@@ -36,9 +40,7 @@ export default class Signin extends Component {
                       Currency Exchange
                   </h1>
                   <p>Sign In with your social account</p>
-                  <p>
-                      <div className="g-signin2"></div>
-                  </p>
+                  <div className="g-signin2"></div>
               </Jumbotron>
           </div>
         );
