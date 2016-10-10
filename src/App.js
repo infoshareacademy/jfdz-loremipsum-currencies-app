@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-
-import Signin from './signin/Signin';
 import Header from './layout/Header';
-import Content from './layout/Content';
+
+import CurrencyExchange from './currencyExchange/CurrencyExchange';
+import MyWallet from './myWallet/MyWallet';
+import UserList from './userList/UserList';
 
 class App extends Component {
   render() {
     return (
         <div>
             {/*<Signin />*/}
-
-          <Header />
-          <Content />
+            <Header />
+            <CurrencyExchange />
+            <MyWallet />
+            <UserList />
         </div>
     );
   }
