@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Header from './layout/Header';
-//import Content from './layout/Content';
+import Content from './layout/Content';
 
 class App extends Component {
 
@@ -15,11 +15,10 @@ class App extends Component {
         <div>
             {/*<Signin />*/}
             <Header />
-            {this.props.children}
+            <Content/>
         </div>
     );
   }
 }
-
 
 export default App;
