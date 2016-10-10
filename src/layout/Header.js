@@ -26,9 +26,7 @@ export default class Header extends Component {
                         </LinkContainer>
                     </Nav>
                     <Nav pullRight>
-                        <LinkContainer to="/signout">
-                            <NavItem eventKey={4}>LogOut</NavItem>
-                        </LinkContainer>
+                        <NavItem eventKey={4}>LogOut</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
