@@ -13,9 +13,17 @@ const error = (response) => {
 };
 
 export default class Signin extends Component {
+
+    componentWillMount() {
+        this.setState({
+           showSignIn: false
+        });
+    }
     render() {
+        var showHideSignin = this.state.showSignIn ? 'signin-show' : 'signin-hide';
+
         return (
-          <div className="singin-container">
+          <div className={"singin-container " + showHideSignin }>
               <Jumbotron className="signin-jumbotron">
                   <h1>
                       Currency Exchange
@@ -31,4 +39,3 @@ export default class Signin extends Component {
         );
     }
 }
-
