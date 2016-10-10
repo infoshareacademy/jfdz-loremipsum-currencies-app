@@ -1,39 +1,34 @@
 import React, { Component } from 'react'
-import GoogleLogin from 'react-google-login';
+import { GoogleLogin } from 'react-google-login-component';
 
 import { Jumbotron } from 'react-bootstrap';
 import './Signin.css';
 
-const success  = (response) => {
-    console.log(response);
-}
-
-const error = (response) => {
-    console.error(response);
-};
 
 export default class Signin extends Component {
 
-    componentWillMount() {
-        this.setState({
-           showSignIn: false
-        });
+    constructor (props, context) {
+        super(props, context);
     }
-    render() {
-        var showHideSignin = this.state.showSignIn ? 'signin-show' : 'signin-hide';
 
+    responseGoogle (googleUser) {
+        var id_token = googleUser.getAuthResponse();
+        console.log(id_token);
+    }
+
+    render() {
         return (
-          <div className={"singin-container " + showHideSignin }>
+          <div className={"singin-container"}>
               <Jumbotron className="signin-jumbotron">
                   <h1>
                       Currency Exchange
                   </h1>
                   <p>Sign In with your social account</p>
-                  <GoogleLogin
-                      clientId="714228051768-i9egh3dupmufu15gfuku94rmg2u9fm3u.apps.googleusercontent.com"
-                      buttonText="Sign in with Google+"
-                      onSuccess={success}
-                      onFailure={error} />
+                  <GoogleLogin socialId="714228051768-i9egh3dupmufu15gfuku94rmg2u9fm3u.apps.googleusercontent.com"
+                               class="google-login"
+                               scope="profile"
+                               responseHandler={this.responseGoogle}
+                               buttonText="Signin with Google+"/>
               </Jumbotron>
           </div>
         );
