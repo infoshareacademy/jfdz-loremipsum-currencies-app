@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Link } from 'react-router';
+import { LinkContainer } from 'react-router-bootstrap';
 
 export default class Header extends Component {
     render() {
@@ -8,18 +9,24 @@ export default class Header extends Component {
             <Navbar>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="#">React-Bootstrap</a>
+                        <Link to="/">React-Bootstrap</Link>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav>
-                        <NavItem eventKey={1} href="#">Currency Exchange</NavItem>
-                        <NavItem eventKey={2} href="#">My Wallet</NavItem>
-                        <NavItem eventKey={3} href="#">User List</NavItem>
+                        <LinkContainer to="currency-exchange">
+                            <NavItem eventKey={1}>Currency Exchange</NavItem>
+                        </LinkContainer>
+                        <LinkContainer to="my-wallet">
+                            <NavItem eventKey={2}>My Wallet</NavItem>
+                        </LinkContainer>
+                        <LinkContainer to="user-list">
+                            <NavItem eventKey={3}>User List</NavItem>
+                        </LinkContainer>
                     </Nav>
                     <Nav pullRight>
-                        <NavItem eventKey={1} href="#">LogOut</NavItem>
+                        <NavItem eventKey={4}>LogOut</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
