@@ -1,0 +1,48 @@
+.table-responsive {
+    padding: 0 2rem;
+}
+
+.table {
+    border-bottom: 0;
+}
+
+.table thead {
+    background-color: #e3eaf3;
+    color: #758697;
+}
+
+.table thead tr th {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1.1rem;
+    border-bottom: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.table > tbody > tr > td {
+    border-top: 0;
+    color: #4c637b;
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f2f6fa;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #ebf1f5;
+}
+
+.table > tfoot > tr > td {
+    border-top: 0;
+    font-weight: bold;
+    color: #4c637b;
+    font-size: 1.3rem;
+}
+
+.table .action-currency-exchange {
+    width: 10rem;
+    text-align: center;
+}

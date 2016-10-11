@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Table, Button } from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
+
+import '../App-Table.css';
+import '../App-Buttons.css';
 
 export default class CurrencyTable extends Component {
     render() {
@@ -13,7 +17,7 @@ export default class CurrencyTable extends Component {
                     <th className="text-center">Count</th>
                     <th className="text-center">Date exchange</th>
                     <th className="text-center">Value</th>
-                    <th></th>
+                    <th className="action-currency-exchange"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -24,7 +28,7 @@ export default class CurrencyTable extends Component {
                     <td className="text-center">15</td>
                     <td className="text-center">2016-11-21</td>
                     <td className="text-center">52,35 zł</td>
-                    <td><Button bsStyle="danger">Delete</Button></td>
+                    <td><Button bsStyle="danger"><FontAwesome name="trash-o" size="2x" spin style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)"}} /> Delete</Button></td>
                 </tr>
                 <tr>
                     <td className="text-center">2</td>
@@ -33,7 +37,7 @@ export default class CurrencyTable extends Component {
                     <td className="text-center">10</td>
                     <td className="text-center">2016-10-17</td>
                     <td className="text-center">31,20 zł</td>
-                    <td><Button bsStyle="danger">Delete</Button></td>
+                    <td><Button bsStyle="danger"><FontAwesome name="trash-o" /> Delete</Button></td>
                 </tr>
                 <tr>
                     <td className="text-center">3</td>
@@ -42,7 +46,7 @@ export default class CurrencyTable extends Component {
                     <td className="text-center">15</td>
                     <td className="text-center">2016-11-21</td>
                     <td className="text-center">52,35 zł</td>
-                    <td><Button bsStyle="danger">Delete</Button></td>
+                    <td><Button bsStyle="danger"><FontAwesome name="trash-o" /> Delete</Button></td>
                 </tr>
                 <tr>
                     <td className="text-center">4</td>
@@ -51,7 +55,7 @@ export default class CurrencyTable extends Component {
                     <td className="text-center">10</td>
                     <td className="text-center">2016-10-17</td>
                     <td className="text-center">31,20 zł</td>
-                    <td><Button bsStyle="danger">Delete</Button></td>
+                    <td><Button bsStyle="danger"><FontAwesome name="trash-o" /> Delete</Button></td>
                 </tr>
                 </tbody>
                 <tfoot>
@@ -65,3 +69,4 @@ export default class CurrencyTable extends Component {
         );
     }
 }
+
