@@ -7,7 +7,7 @@ export default class MyWallet extends Component {
     render() {
         return(
             <div>
-                <Heading>Currency exchange</Heading>
+                <Heading>My Wallet</Heading>
                 <CurrencyAdd />
                 <CurrencyTable />
             </div>
