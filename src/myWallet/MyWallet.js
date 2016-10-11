@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-
 import { Table, Button } from 'react-bootstrap';
+import CurrencyAdd from './CurrencyAdd';
 
 export default class MyWallet extends Component {
     render() {
         return(
             <div>
                 <h2>Currency exchange</h2>
+
+                <CurrencyAdd />
+
                 <Table responsive striped hover>
                     <thead>
                     <tr>
