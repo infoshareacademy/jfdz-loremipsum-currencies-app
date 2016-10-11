@@ -7,6 +7,9 @@ import '../App-Buttons.css';
 import './CurrencyTable.css';
 
 export default class CurrencyTable extends Component {
+
+
+
     render() {
         return(
             <Table responsive striped hover>
