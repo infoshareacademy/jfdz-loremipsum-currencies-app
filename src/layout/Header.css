@@ -4,7 +4,8 @@
     border-radius: 0;
 }
 
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:focus{
     color: #b8c6d6;
     text-shadow: none;
     font-size: 1.2rem;

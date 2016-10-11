@@ -26,8 +26,8 @@
     -o-transition: background 1s;
     transition: background 1s;
 }
-.navbar-default .navbar-header:hover,
-.navbar-default .navbar-header:focus {
+.navbar-default .navbar-header h1:hover,
+.navbar-default .navbar-header h1:focus {
     background: #38b1eb;
     color: #ffffff;
 }
