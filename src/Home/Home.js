@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+import Heading from '../layout/Heading';
 
 export default class Home extends Component {
     render(){
         return (
-            <div>to jest strona główna projektu</div>
+            <div>
+                <Heading>Home</Heading>
+            </div>
         );
     }
 }
