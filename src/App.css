@@ -1,3 +1,7 @@
 html {
   font-size: 10px;
 }
+
+hr {
+ border-top: 2px solid #ebf1f5;
+}

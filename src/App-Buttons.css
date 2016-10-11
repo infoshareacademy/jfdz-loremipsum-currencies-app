@@ -8,3 +8,14 @@
     background-color: #ce6d89;
     border-color: #bb5270;
 }
+
+.btn-primary {
+    background: #5494d6;
+    border-color: #3471af;
+}
+
+.btn-primary:focus,
+.btn-primary:hover {
+    background: #3f78b3;
+    border-color: #3471af;
+}

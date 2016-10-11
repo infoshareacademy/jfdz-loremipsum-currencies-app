@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
+import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+import './CurrencyAdd.css';
 
 export default class CurrencyAdd extends Component {
     render() {
         return(
-            <Form inline>
+            <Form inline className="form-wallet text-center">
                 <FormGroup controlId="formControlsSelect">
-                    <ControlLabel>Select Currency</ControlLabel>
-                    {' '}
                     <FormControl componentClass="select" placeholder="Select">
-                        <option value="select">- select -</option>
-                        <option value="other"></option>
+                        <option value="select">- select currency -</option>
+                        <option value="USD">dolar amerykański</option>
+                        <option value="EUR">euro</option>
+                        <option value="CHF">frank szwajcarski</option>
+                        <option value="RUB">rubel rosyjski</option>
                     </FormControl>
                 </FormGroup>
-                {' '}
-                <Button type="submit">Add Currency</Button>
+                {'   '}
+                <Button bsStyle="primary">Add Currency</Button>
                 <hr />
             </Form>
         );
