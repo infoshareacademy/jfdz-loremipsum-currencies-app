@@ -1,0 +1,33 @@
+.navbar-header h1 {
+    margin: 0;
+    padding: .1em 1.5rem .5rem;
+    display: inline-block;
+}
+
+.navbar-header h1 img {
+    display: inline-block;
+    width: 4.5rem;
+    margin-right: 1rem;
+}
+
+.navbar-header h1 a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    vertical-align: middle;
+}
+
+.navbar-default .navbar-header {
+    background: #344c67;
+    color: #ffffff;
+    -webkit-transition: background 1s;
+    -moz-transition: background 1s;
+    -ms-transition: background 1s;
+    -o-transition: background 1s;
+    transition: background 1s;
+}
+.navbar-default .navbar-header h1:hover,
+.navbar-default .navbar-header h1:focus {
+    background: #38b1eb;
+    color: #ffffff;
+}
