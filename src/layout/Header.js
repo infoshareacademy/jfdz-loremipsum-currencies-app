@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
+import './Header.css';
 
 export default class Header extends Component {
     render() {
@@ -9,7 +10,7 @@ export default class Header extends Component {
             <Navbar>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <Link to="/">React-Bootstrap</Link>
+                        <h1><Link to="/">Currency Monitor</Link></h1>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
