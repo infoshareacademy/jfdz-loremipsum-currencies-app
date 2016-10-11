@@ -35,6 +35,14 @@
     background-color: #ebf1f5;
 }
 
+.table-hover > tbody > tr:hover {
+    background: #4c637b;
+}
+
+.table-hover > tbody > tr:hover > td {
+    color: #ffffff;
+}
+
 .table > tfoot > tr > td {
     border-top: 0;
     font-weight: bold;
