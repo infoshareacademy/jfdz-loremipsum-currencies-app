@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { Link } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
+import HeaderLogo from './header/Logo';
 import './Header.css';
 
 export default class Header extends Component {
@@ -10,7 +10,7 @@ export default class Header extends Component {
             <Navbar>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <h1><Link to="/">Currency Monitor</Link></h1>
+                        <HeaderLogo />
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
