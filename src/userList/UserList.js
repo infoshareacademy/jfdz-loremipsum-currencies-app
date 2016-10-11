@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import Heading from '../layout/Heading';
 
 export default class UserList extends Component {
     render() {
         return (
-          <p>Tutaj będzie lista użytkowników</p>
+            <div>
+                <Heading>User List</Heading>
+            </div>
         );
     }
 }
