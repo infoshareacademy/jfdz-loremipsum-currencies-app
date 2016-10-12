@@ -10,11 +10,17 @@ import './CurrencyTable.css';
 
 export default class CurrencyTable extends Component {
 
+    constructor() {
+        super();
+    }
+
+
     componentWillMount() {
         var context = this;
         context.setState({
             storeCurrency: JSON.parse(localStorage.getItem('wallet')) || [],
-            myCurrency: []
+            myCurrency: [],
+            sumVal: 0
         });
 
         $.ajax({
@@ -27,15 +33,19 @@ export default class CurrencyTable extends Component {
                         v === item.code
                     )
                  );
-
-                console.log(myStoreCurrency);
-
                 context.setState({
                     myCurrency: myStoreCurrency
                 });
             }
         });
 
+    }
+
+    changeSum(index, ev) {
+        console.log(index);
+        this.setState({
+           sumVal: ev.target.value || 0
+        });
     }
 
     render() {
@@ -64,12 +74,12 @@ export default class CurrencyTable extends Component {
                             <td className="text-center">
                                 <form>
                                     <FormGroup controlId="formInlineName">
-                                        <FormControl type="text" defaultValue="15" className="form-count" />
+                                        <FormControl type="text" defaultValue="1" className="form-count" onChange={this.changeSum.bind(this, index)} />
                                     </FormGroup>
                                 </form>
                             </td>
                             <td className="text-center">2016-11-21</td>
-                            <td></td>
+                            <td className="text-center">{this.state.sumVal}</td>
                             <td><Button bsStyle="danger"><FontAwesome name="trash-o" /> Delete</Button></td>
                         </tr>
                     )}

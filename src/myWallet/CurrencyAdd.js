@@ -24,7 +24,6 @@ export default class CurrencyAdd extends Component {
             dataType: "json",
             url: 'http://api.nbp.pl/api/exchangerates/tables/A/',
             success: function(data) {
-                console.log(data[0].rates);
                 context.setState({
                     currencies: data[0].rates
                 });
