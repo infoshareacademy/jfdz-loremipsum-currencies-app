@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import { Table } from 'react-bootstrap';
 import { Table, Button, FormGroup, FormControl } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import $ from 'jquery';
@@ -10,17 +9,12 @@ import './CurrencyTable.css';
 
 export default class CurrencyTable extends Component {
 
-    constructor() {
-        super();
-    }
-
-
     componentWillMount() {
         var context = this;
+
         context.setState({
-            storeCurrency: JSON.parse(localStorage.getItem('wallet')) || [],
-            myCurrency: [],
-            sumVal: 0
+            currencyLocalData: JSON.parse(localStorage.getItem('wallet')) || [],
+            myWalletData: [],
         });
 
         $.ajax({
@@ -28,24 +22,22 @@ export default class CurrencyTable extends Component {
             dataType: "json",
             url: 'http://api.nbp.pl/api/exchangerates/tables/A/?format=json',
             success: function(data) {
-                var myStoreCurrency = data[0].rates.filter( item =>
-                    context.state.storeCurrency.find( v =>
+                var filterCurrencyLocalData = data[0].rates.filter( item =>
+                    context.state.currencyLocalData.find( v =>
                         v === item.code
                     )
                  );
+
                 context.setState({
-                    myCurrency: myStoreCurrency
+                    myWalletData: filterCurrencyLocalData
                 });
             }
         });
-
     }
 
-    changeSum(index, ev) {
-        console.log(index);
-        this.setState({
-           sumVal: ev.target.value || 0
-        });
+    updateSumCurrency(currencyCourse, ev) {
+        let updateSum = currencyCourse * ev.target.value;
+        console.log(updateSum);
     }
 
     render() {
@@ -59,13 +51,12 @@ export default class CurrencyTable extends Component {
                         <th className="text-center">Code</th>
                         <th className="text-center">Course</th>
                         <th className="text-center">Count</th>
-                        <th className="text-center">Date exchange</th>
                         <th className="text-center">Value</th>
                         <th className="action-currency-exchange"></th>
                     </tr>
                     </thead>
                     <tbody>
-                    {this.state.myCurrency.map( (item, index) =>
+                    {this.state.myWalletData.map( (item, index) =>
                         <tr key={item.code}>
                             <td className="text-center">{index + 1}</td>
                             <td>{item.currency}</td>
@@ -74,19 +65,18 @@ export default class CurrencyTable extends Component {
                             <td className="text-center">
                                 <form>
                                     <FormGroup controlId="formInlineName">
-                                        <FormControl type="text" defaultValue="1" className="form-count" onChange={this.changeSum.bind(this, index)} />
+                                        <FormControl type="text" defaultValue="1" className="form-count" onChange={this.updateSumCurrency.bind(this, item.mid)} />
                                     </FormGroup>
                                 </form>
                             </td>
-                            <td className="text-center">2016-11-21</td>
-                            <td className="text-center">{this.state.sumVal}</td>
+                            <td className="text-center">{item.mid}</td>
                             <td><Button bsStyle="danger"><FontAwesome name="trash-o" /> Delete</Button></td>
                         </tr>
                     )}
                     </tbody>
                     <tfoot>
                     <tr>
-                        <td className="text-right" colSpan="6">Sum</td>
+                        <td className="text-right" colSpan="5">Sum</td>
                         <td className="text-center">83,55 zł</td>
                         <td></td>
                     </tr>
@@ -96,4 +86,3 @@ export default class CurrencyTable extends Component {
         );
     }
 }
-
