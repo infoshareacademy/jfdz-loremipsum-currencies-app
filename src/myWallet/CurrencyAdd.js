@@ -16,7 +16,7 @@ export default class CurrencyAdd extends Component {
         var context = this;
         context.setState({
             currencies: [],
-            selectedCurrency: {}
+            selectedCurrency: ''
         });
 
         $.ajax({
@@ -35,23 +35,22 @@ export default class CurrencyAdd extends Component {
 
     changeCurrency(ev) {
         this.setState({
-           selectedCurrency: {
-               currency: ev.target.value
-           }
+           selectedCurrency: ev.target.value
         });
     }
 
     addCurrency() {
         let currencyStore;
+        let itemStore = this.state.selectedCurrency;
+
+
         if(!localStorage.getItem('wallet')) {
             currencyStore = [];
-            currencyStore.push(this.state.selectedCurrency);
-            localStorage.setItem('wallet', JSON.stringify(currencyStore));
         } else {
             currencyStore = JSON.parse(localStorage.getItem('wallet'));
-            currencyStore.push(this.state.selectedCurrency);
-            localStorage.setItem('wallet', JSON.stringify(currencyStore));
         }
+        currencyStore.push(itemStore);
+        localStorage.setItem('wallet', JSON.stringify(currencyStore));
     }
 
 
