@@ -6,10 +6,17 @@ import './CurrencyAdd.css';
 
 export default class CurrencyAdd extends Component {
 
+    constructor() {
+        super();
+        this.changeCurrency = this.changeCurrency.bind(this);
+        this.addCurrency = this.addCurrency.bind(this);
+    }
+
     componentWillMount() {
         var context = this;
         context.setState({
-            currencies: []
+            currencies: [],
+            selectedCurrency: {}
         });
 
         $.ajax({
@@ -25,11 +32,34 @@ export default class CurrencyAdd extends Component {
         });
     }
 
+
+    changeCurrency(ev) {
+        this.setState({
+           selectedCurrency: {
+               currency: ev.target.value
+           }
+        });
+    }
+
+    addCurrency() {
+        let currencyStore;
+        if(!localStorage.getItem('wallet')) {
+            currencyStore = [];
+            currencyStore.push(this.state.selectedCurrency);
+            localStorage.setItem('wallet', JSON.stringify(currencyStore));
+        } else {
+            currencyStore = JSON.parse(localStorage.getItem('wallet'));
+            currencyStore.push(this.state.selectedCurrency);
+            localStorage.setItem('wallet', JSON.stringify(currencyStore));
+        }
+    }
+
+
     render() {
         return(
             <Form inline className="form-wallet text-center">
                 <FormGroup controlId="formControlsSelect">
-                    <FormControl componentClass="select" placeholder="Select">
+                    <FormControl componentClass="select" onChange={this.changeCurrency}>
                         <option value="0">- select currency -</option>
                         {this.state.currencies.map(
                             currency => <option key={currency.code} value={currency.code}>{currency.code} - {currency.currency}</option>
@@ -37,9 +67,10 @@ export default class CurrencyAdd extends Component {
                     </FormControl>
                 </FormGroup>
                 {'   '}
-                <Button bsStyle="primary">Add Currency</Button>
+                <Button bsStyle="primary" onClick={this.addCurrency}>Add Currency</Button>
                 <hr />
             </Form>
         );
     }
 }
+
