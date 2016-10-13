@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Table, Button, FormGroup, FormControl } from 'react-bootstrap';
-import FontAwesome from 'react-fontawesome';
+import { Table } from 'react-bootstrap';
 import $ from 'jquery';
+import CurrencyRow from './CurrencyRow';
 
 import '../App-Table.css';
 import '../App-Buttons.css';
@@ -16,6 +16,10 @@ export default class CurrencyTable extends Component {
             currencyLocalData: JSON.parse(localStorage.getItem('wallet')) || [],
             myWalletData: [],
         });
+    }
+
+    componentDidMount() {
+        var context = this;
 
         $.ajax({
             type: 'GET',
@@ -26,18 +30,10 @@ export default class CurrencyTable extends Component {
                     context.state.currencyLocalData.find( v =>
                         v === item.code
                     )
-                 );
-
-                context.setState({
-                    myWalletData: filterCurrencyLocalData
-                });
+                );
+                context.setState({myWalletData: filterCurrencyLocalData});
             }
         });
-    }
-
-    updateSumCurrency(currencyCourse, ev) {
-        let updateSum = currencyCourse * ev.target.value;
-        console.log(updateSum);
     }
 
     render() {
@@ -57,21 +53,7 @@ export default class CurrencyTable extends Component {
                     </thead>
                     <tbody>
                     {this.state.myWalletData.map( (item, index) =>
-                        <tr key={item.code}>
-                            <td className="text-center">{index + 1}</td>
-                            <td>{item.currency}</td>
-                            <td className="text-center">{item.code}</td>
-                            <td className="text-center">{item.mid} zł</td>
-                            <td className="text-center">
-                                <form>
-                                    <FormGroup controlId="formInlineName">
-                                        <FormControl type="text" defaultValue="1" className="form-count" onChange={this.updateSumCurrency.bind(this, item.mid)} />
-                                    </FormGroup>
-                                </form>
-                            </td>
-                            <td className="text-center">{item.mid}</td>
-                            <td><Button bsStyle="danger"><FontAwesome name="trash-o" /> Delete</Button></td>
-                        </tr>
+                        <CurrencyRow key={item.code} id={index + 1} currency={item.currency} code={item.code} mid={item.mid} />
                     )}
                     </tbody>
                     <tfoot>
