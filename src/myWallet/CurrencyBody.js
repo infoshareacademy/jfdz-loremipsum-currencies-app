@@ -35,7 +35,7 @@ export default class CurrencyHead extends Component {
         return(
             <tbody>
                 {this.state.myWalletData.map( (item, index) =>
-                    <CurrencyRow key={item.code} id={index + 1} currency={item.currency} code={item.code} mid={item.mid} />
+                    <CurrencyRow key={item.code} id={index} currency={item.currency} code={item.code} mid={item.mid} />
                 )}
             </tbody>
         );

@@ -42,7 +42,6 @@ export default class CurrencyAdd extends Component {
         let currencyStore;
         let itemStore = this.state.selectedCurrency;
 
-
         if(!localStorage.getItem('wallet')) {
             currencyStore = [];
         } else {

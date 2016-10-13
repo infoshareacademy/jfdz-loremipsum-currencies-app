@@ -15,10 +15,17 @@ export default class CurrencyRow extends Component {
         this.setState({currencySumValue: updateSum});
     }
 
+    deleteRow(index) {
+        let currencyStore = JSON.parse(localStorage.getItem('wallet'))
+        currencyStore.splice(index, 1);
+        localStorage.setItem('wallet', JSON.stringify(currencyStore));
+        console.log(this.state.myWalletData);
+    }
+
     render() {
         return(
             <tr>
-                <td className="text-center">{this.props.id}</td>
+                <td className="text-center">{this.props.id + 1}</td>
                 <td>{this.props.currency}</td>
                 <td className="text-center">{this.props.code}</td>
                 <td className="text-center">{this.props.mid} zł</td>
@@ -30,8 +37,9 @@ export default class CurrencyRow extends Component {
                     </form>
                 </td>
                 <td className="text-center">{this.state.currencySumValue} zł</td>
-                <td><Button bsStyle="danger"><FontAwesome name="trash-o" /> Delete</Button></td>
+                <td><Button bsStyle="danger" onClick={this.deleteRow.bind(this, this.props.id)}><FontAwesome name="trash-o" /> Delete</Button></td>
             </tr>
         );
     }
 }
+
