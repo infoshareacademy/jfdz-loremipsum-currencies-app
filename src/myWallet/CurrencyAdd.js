@@ -16,7 +16,7 @@ export default class CurrencyAdd extends Component {
         var context = this;
         context.setState({
             currencies: [],
-            selectedCurrency: ''
+            selectedCurrency: {}
         });
 
         $.ajax({
@@ -34,7 +34,11 @@ export default class CurrencyAdd extends Component {
 
     changeCurrency(ev) {
         this.setState({
-           selectedCurrency: ev.target.value
+           selectedCurrency: {
+               code: ev.target.value,
+               count: 1,
+               date: new Date()
+           }
         });
     }
 

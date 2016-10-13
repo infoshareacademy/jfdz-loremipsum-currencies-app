@@ -23,9 +23,11 @@ export default class CurrencyHead extends Component {
             success: function(data) {
                 var filterCurrencyLocalData = data[0].rates.filter( item =>
                     context.state.currencyLocalData.find( v =>
-                        v === item.code
+                        v.code === item.code
                     )
+
                 );
+                console.log(filterCurrencyLocalData);
                 context.setState({myWalletData: filterCurrencyLocalData});
             }
         });
