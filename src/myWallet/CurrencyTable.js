@@ -11,11 +11,11 @@ export default class CurrencyTable extends Component {
             <Table responsive striped hover>
                 <thead>
                 <tr>
-                    <th className="text-center">Id</th>
+                    <th className="text-center">Index</th>
                     <th>Currency</th>
                     <th className="text-center">Course</th>
                     <th className="text-center">Count</th>
-                    <th className="text-center">Date exchange</th>
+                    <th className="text-center">Exchange Date</th>
                     <th className="text-center">Value</th>
                     <th className="action-currency-exchange"></th>
                 </tr>
