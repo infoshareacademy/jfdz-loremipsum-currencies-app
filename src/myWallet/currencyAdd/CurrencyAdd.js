@@ -20,9 +20,6 @@ const CurrencyAdd = ({ currency }) => (
         {'   '}
         <Button bsStyle="primary">Add Currency</Button>
         <hr />
-
-        {/*currency.map( (e,i) => <p>{JSON.stringify(e)}</p> )*/}
-
     </Form>
 )
 
