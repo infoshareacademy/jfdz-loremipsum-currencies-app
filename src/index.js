@@ -8,14 +8,22 @@ import CurrencyExchange from './currencyExchange/CurrencyExchange';
 import MyWallet from './myWallet/MyWallet';
 import UserList from './userList/UserList';
 
+import { Provider } from 'react-redux'
+import store from './store'
+
+import { fetchCurrency } from './myWallet/currencyAdd/actionCreators'
+
 ReactDOM.render(
-    <Router history={browserHistory}>
-        <Route path="/" component={App}>
-            <IndexRoute component={Home} />
-            <Route path="currency-exchange" component={CurrencyExchange} />
-            <Route path="my-wallet" component={MyWallet} />
-            <Route path="user-list" component={UserList} />
-        </Route>
-    </Router>,
+    <Provider store={store}>
+        <Router history={browserHistory}>
+            <Route path="/" component={App}>
+                <IndexRoute component={Home} />
+                <Route path="currency-exchange" component={CurrencyExchange} />
+                <Route path="my-wallet" component={MyWallet} onEnter={() => store.dispatch(fetchCurrency())} />
+                <Route path="user-list" component={UserList} />
+            </Route>
+        </Router>
+    </Provider>,
   document.getElementById('root')
 );
+
