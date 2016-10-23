@@ -4,8 +4,13 @@ import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 import './CurrencyAdd.css';
 
 const mapStateToProps = (state) => ({
-    currency: state.currency
+    currency: state.currency,
+    myCurrency: state.myCurrency
 })
+
+function addCurrencyToLocalStorage() {
+    //localStorage.setItem('myCurrency', 'USD');
+}
 
 const CurrencyAdd = ({ currency }) => (
     <Form inline className="form-wallet text-center">
@@ -13,12 +18,15 @@ const CurrencyAdd = ({ currency }) => (
             <FormControl componentClass="select">
                 <option value="0">- select currency -</option>
                 {currency.map(
-                    currencyVal => <option key={currencyVal.code}>{ currencyVal.code } - { currencyVal.currency }</option>
+                    currencyVal =>
+                        <option key={currencyVal.code}>
+                            { currencyVal.code } - { currencyVal.currency }
+                        </option>
                 )}
             </FormControl>
         </FormGroup>
         {'   '}
-        <Button bsStyle="primary">Add Currency</Button>
+        <Button bsStyle="primary" onClick={addCurrencyToLocalStorage}>Add Currency</Button>
         <hr />
     </Form>
 )
