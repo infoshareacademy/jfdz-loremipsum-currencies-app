@@ -1,8 +1,7 @@
-/**
- * Created by nataliaslugocka on 23.10.16.
- */
+import { RECEIVE_EURO, REQUEST_EURO } from './actionTypes'
+
 const initialState = {
-    labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    labels: [/*days of month (evert 4 days) = 30-09 04-10 08-10 12-10 16-10 20-10 24-10 28-10 */ "a", "b", "c"],
     datasets: [
         {
             label: "US Dolars",
@@ -12,7 +11,7 @@ const initialState = {
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(38,186,38,1)",
-            data: [40, 70, 80, 60, 30, 50, 20]
+            data: []
         },
         {
             label: "Euro",
@@ -22,7 +21,7 @@ const initialState = {
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
-            data: [85, 65, 75, 95, 25, 25, 35]
+            data: []
         },
         {
             label: "Polish ZLOTY",
@@ -32,7 +31,7 @@ const initialState = {
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(191,63,63,1)",
-            data: [45, 50, 70, 80, 55, 75, 40]
+            data: []
         }
     ]
 }
@@ -48,6 +47,15 @@ function rand(min, max, num) {
 
 export default (state = initialState, action) => {
     switch (action.type){
+        case REQUEST_EURO:
+            return Object.assign({}, state, {
+            isLoading: true
+        })
+        case RECEIVE_EURO:
+            return Object.assign({}, state, {
+                isLoading: false,
+                euro: action.euro
+            })
         default:
             return state
     }
