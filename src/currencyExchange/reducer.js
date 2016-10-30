@@ -1,30 +1,30 @@
 import { RECEIVE_EURO, REQUEST_EURO } from './actionTypes'
 
 const initialState = {
-    labels: [/*days of month (evert 4 days) = 30-09 04-10 08-10 12-10 16-10 20-10 24-10 28-10 */ "a", "b", "c"],
+    labels: ["a","b","c"],
     datasets: [
         {
-            label: "US Dolars",
-            fillColor: "rgba(38,186,38,0.2)",
-            strokeColor: "rgba(38,186,38,1)",
-            pointColor: "rgba(38,186,38,1)",
+            label: "Euro", //code: EUR
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(38,186,38,1)",
             data: []
         },
         {
-            label: "Euro",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
+            label: "US Dolars", //code: USD
+            fillColor: "rgba(38,186,38,0.2)",
+            strokeColor: "rgba(38,186,38,1)",
+            pointColor: "rgba(38,186,38,1)",
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
             data: []
         },
         {
-            label: "Polish ZLOTY",
+            label: "Great Britain Pound", //code: GBP
             fillColor: "rgba(191,63,63,0.2)",
             strokeColor: "rgba(191,63,63,1)",
             pointColor: "rgba(191,63,63,1)",
@@ -54,7 +54,12 @@ export default (state = initialState, action) => {
         case RECEIVE_EURO:
             return Object.assign({}, state, {
                 isLoading: false,
-                euro: action.euro
+                labels: action.euro.rates.map( (e) => e.effectiveDate ),
+                datasets: [
+                    {
+                        data: action.euro.rates.map(rate => rate.mid)
+                    }
+                ]
             })
         default:
             return state
