@@ -10,7 +10,7 @@ export default class MyWallet extends Component {
             <div>
                 <Heading>My Wallet</Heading>
                 <CurrencyAdd />
-                <CurrencyTable />
+                <CurrencyTable currenciec={this.favoriteCurrencies} />
             </div>
         );
     }
