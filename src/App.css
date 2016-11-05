@@ -3,4 +3,5 @@ html {
 }
 canvas {
   width: 100% !important;
+  height: 60vh !important;
 }
