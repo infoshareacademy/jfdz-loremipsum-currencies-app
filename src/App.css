@@ -3,5 +3,5 @@ html {
 }
 canvas {
   width: 100% !important;
-  height: 60vh !important;
+  height: 60vh !important;  /*RWD - oryginalny wymiar tabeli nie byl responsywny, obejscie poprzez nadanie wysokosci i szerokosci w odpowiednich jednostkach*/
 }
