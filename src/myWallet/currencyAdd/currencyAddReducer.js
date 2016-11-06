@@ -16,7 +16,7 @@ export default (state = initialState, action) => {
         case SAVE_MY_WALLET:
             return Object.assign({}, state, {
                 myCurrency: _.uniq(
-                    state.myCurrency.concat([{code: state.selectedCurrency, quantity: 10}]),
+                    state.myCurrency.concat([{code: state.selectedCurrency, quantity: 1}]),
                     function (item) {
                         return item.code;
                     }

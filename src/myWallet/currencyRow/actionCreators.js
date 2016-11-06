@@ -1,8 +1,8 @@
-import { CHANGE_SUM_CURRENCY } from './actionTypes'
+import { CHANGE_QUANTITY } from './actionTypes'
 
-export function changeSumCurrency(changedValue) {
+export function changeQuantity(quantity) {
     return {
-        type: CHANGE_SUM_CURRENCY,
-        changedValue: changedValue
+        type: CHANGE_QUANTITY,
+        quantity: quantity
     }
 }

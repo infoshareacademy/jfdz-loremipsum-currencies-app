@@ -1,14 +1,14 @@
-import { CHANGE_SUM_CURRENCY } from './actionTypes'
+import { CHANGE_QUANTITY } from './actionTypes'
 
 const initialState = {
-    changedValue: ''
+    quantity: ''
 }
 
 export default (state = initialState, action) => {
     switch(action.type) {
-        case CHANGE_SUM_CURRENCY:
+        case CHANGE_QUANTITY:
             return Object.assign({}, state, {
-                changedValue: action.changedValue
+                quantity: action.quantity
             })
         default:
             return state;

@@ -1,1 +1,1 @@
-export const CHANGE_SUM_CURRENCY = 'currencyRow/CHANGE_SUM_CURRENCY'
+export const CHANGE_QUANTITY = 'currencyRow/CHANGE_QUANTITY'
