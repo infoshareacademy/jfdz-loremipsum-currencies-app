@@ -5,10 +5,11 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
+
     switch(action.type) {
         case CHANGE_QUANTITY:
             return Object.assign({}, state, {
-                //myCurrency:
+                myCurrency: state.myCurrency
             })
         default:
             return state;
