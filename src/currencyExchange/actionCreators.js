@@ -17,7 +17,7 @@ function receiveEuro(euro) {
 export function fetchCurrency(currency) {
     return function (dispatch) {
         dispatch(requestEuro())
-        return fetch(`http://api.nbp.pl/api/exchangerates/rates/A/${currency}/2016-09-14/2016-10-20`)
+        return fetch(`http://api.nbp.pl/api/exchangerates/rates/A/${currency}/2016-10-15/2016-11-05`)
             .then(response => response.json())
             .then(euro => dispatch(receiveEuro(euro)))
     }
