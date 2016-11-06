@@ -1,10 +1,13 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
+import exchangeReducer from './currencyExchange/reducer'
 import persistState from 'redux-localstorage'
 
 import currencyReducer from './myWallet/currencyAdd/currencyAddReducer'
 
+
 const reducer = combineReducers({
+    currencyExchange: exchangeReducer,
     currency: currencyReducer
 })
 
@@ -20,6 +23,4 @@ let store = createStore(
     )
 )
 
-
 export default store
-
