@@ -25,7 +25,7 @@ class CurrencyExchange extends Component {
         super()
 
         this.state = {
-            selectedCurrency: 'EUR'
+            selectedCurrency: 'Select Currency'
         }
     }
 
