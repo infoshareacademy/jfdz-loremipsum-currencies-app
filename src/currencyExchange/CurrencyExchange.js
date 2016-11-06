@@ -42,6 +42,7 @@ class CurrencyExchange extends Component {
               <button onClick={() => this.props.fetchCurrency('EUR') }>Get data</button>
                 <Line data={this.props.data} options={{responsive: true,
 maintainAspectRatio: false}} height="100" />
+              
 
           </div>
         );
