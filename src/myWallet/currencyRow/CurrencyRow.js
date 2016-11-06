@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    changeQuantity: (quantity) => dispatch(changeQuantity(quantity))
+    changeQuantity: (quantity, code) => dispatch(changeQuantity(quantity, code))
 })
 
 const CurrencyRow = ({
@@ -29,7 +29,7 @@ const CurrencyRow = ({
         <td className="text-center">
             <form>
                 <FormGroup controlId="formInlineName">
-                    <FormControl type="text" defaultValue={quantity} className="form-count" onChange={(ev) => changeQuantity(ev.target.value)} />
+                    <FormControl type="text" defaultValue={quantity} className="form-count" onChange={(ev) => changeQuantity(ev.target.value, code)} />
                 </FormGroup>
             </form>
         </td>

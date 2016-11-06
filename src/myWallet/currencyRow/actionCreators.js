@@ -1,8 +1,9 @@
 import { CHANGE_QUANTITY } from './actionTypes'
 
-export function changeQuantity(quantity) {
+export function changeQuantity(quantity, code) {
     return {
         type: CHANGE_QUANTITY,
-        quantity: quantity
+        quantity: quantity,
+        code: code
     }
 }

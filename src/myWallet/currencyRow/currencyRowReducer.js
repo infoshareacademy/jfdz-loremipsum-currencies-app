@@ -1,14 +1,14 @@
 import { CHANGE_QUANTITY } from './actionTypes'
 
 const initialState = {
-    quantity: ''
+    myCurrency: []
 }
 
 export default (state = initialState, action) => {
     switch(action.type) {
         case CHANGE_QUANTITY:
             return Object.assign({}, state, {
-                quantity: action.quantity
+                //myCurrency:
             })
         default:
             return state;
