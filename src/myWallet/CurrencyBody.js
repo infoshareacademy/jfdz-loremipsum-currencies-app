@@ -1,5 +1,5 @@
 import React from 'react'
-import CurrencyRow from './CurrencyRow'
+import CurrencyRow from './currencyRow/CurrencyRow'
 
 import { connect } from 'react-redux'
 
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 const CurrencyAdd = ({currencies, myCurrency}) => (
     <tbody>
     {currencies
-        .filter( currency => myCurrency.indexOf(currency.code) !== -1)
+        .filter( currency => myCurrency.find(item => item.code === currency.code) !== undefined)
         .map(
             (currency, index) =>
                 <CurrencyRow
@@ -19,6 +19,7 @@ const CurrencyAdd = ({currencies, myCurrency}) => (
                     num = { index + 1 }
                     code = { currency.code }
                     name = { currency.currency }
+                    quantity = {myCurrency.find(item => item.code === currency.code).quantity}
                     value =  { currency.mid } />
         )}
     </tbody>
