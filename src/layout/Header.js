@@ -4,6 +4,12 @@ import { LinkContainer } from 'react-router-bootstrap';
 import HeaderLogo from './header/Logo';
 import './Header.css';
 
+import FacebookLogin from 'react-facebook-login';
+
+const responseFacebook = (response) => {
+    console.log(response);
+}
+
 export default class Header extends Component {
     render() {
         return (
@@ -27,7 +33,14 @@ export default class Header extends Component {
                         </LinkContainer>
                     </Nav>
                     <Nav pullRight>
-                        <NavItem eventKey={4}>LogOut</NavItem>
+                        <NavItem eventKey={4}>        <FacebookLogin
+                            appId="1472823329401524"
+                            autoLoad={true}
+                            fields="name,email,picture"
+                            callback={responseFacebook}
+                            size="small"
+                            textButton
+                            icon='fa-facebook-official fa-2x' /></NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
