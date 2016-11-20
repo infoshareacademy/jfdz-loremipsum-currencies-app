@@ -4,13 +4,11 @@ import exchangeReducer from './currencyExchange/reducer'
 import persistState from 'redux-localstorage'
 
 import currencyReducer from './myWallet/currencyAdd/currencyAddReducer'
-import currencyRowReducer from './myWallet/currencyRow/currencyRowReducer'
 
 
 const reducer = combineReducers({
     currencyExchange: exchangeReducer,
-    currency: currencyReducer,
-    currencyRow: currencyRowReducer
+    currency: currencyReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

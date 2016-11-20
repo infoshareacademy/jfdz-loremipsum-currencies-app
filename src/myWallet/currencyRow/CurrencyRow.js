@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Button, FormGroup, FormControl } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
-import { changeQuantity } from './actionCreators'
+import { changeQuantity } from '../currencyAdd/actionCreators'
 
 const mapStateToProps = (state) => ({
 
