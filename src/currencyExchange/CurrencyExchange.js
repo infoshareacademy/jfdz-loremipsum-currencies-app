@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import Heading from '../layout/Heading';
 import { connect } from 'react-redux'
 import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+import moment from 'moment'
 
 import { fetchCurrency } from './actionCreators'
 
 import {Line} from 'react-chartjs'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
 const mapStateToProps = (state) => ({
      data: state.currencyExchange,
@@ -25,8 +28,15 @@ class CurrencyExchange extends Component {
         super()
 
         this.state = {
-            selectedCurrency: 'Select Currency'
+            selectedCurrency: 'Select Currency',
+            startDate: moment()
         }
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(value) {
+        this.setState({startDate: value})
     }
 
     componentDidMount() {
@@ -48,8 +58,12 @@ class CurrencyExchange extends Component {
                                       { currencyVal.code } - { currencyVal.currency }
                                   </option>
                           )}
+
                       </FormControl>
                   </FormGroup>
+                  <DatePicker
+                      selected={this.state.startDate}
+                      onChange={this.handleChange} />
                   <hr />
               </Form>
 

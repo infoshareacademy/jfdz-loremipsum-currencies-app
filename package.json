@@ -10,6 +10,7 @@
     "es6-promise": "^4.0.5",
     "font-awesome": "^4.6.3",
     "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.16.0",
     "react": "^15.3.2",
     "react-bootstrap": "^0.30.5",
     "react-chartjs": "^0.8.0",
