@@ -9,8 +9,8 @@ import FacebookLogin from 'react-facebook-login';
 const responseFacebook = (response) => {
     console.log(response);
     localStorage.setItem(
-        response.name,
-        response.email
+        document.forms.name,
+        document.forms.email
     )
 };
 

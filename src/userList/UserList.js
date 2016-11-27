@@ -6,8 +6,9 @@ import Heading from '../layout/Heading';
 function loadUserList(){
     var userList='';
     for (var name in localStorage)
-        userList += (name);
-    return (<tr><td>{userList}</td></tr>)
+        userList += (name + " ");
+    console.log(localStorage)
+    return (<div>{userList}</div>)
 }
 
 export default class UserList extends Component {
@@ -15,9 +16,7 @@ export default class UserList extends Component {
         return (
             <div>
                 <Heading>User List</Heading>
-                <table>
                     {loadUserList()}
-                </table>
             </div>
         );
     }
