@@ -32,10 +32,7 @@ class CurrencyExchange extends Component {
             startDate: moment()
         }
 
-        this.state = {
-            selectedCurrency: 'Select Currency',
-            endDate: moment()
-        }
+       
 
         this.handleChange = this.handleChange.bind(this);
     }
@@ -68,15 +65,11 @@ class CurrencyExchange extends Component {
 
                       </FormControl>
                   </FormGroup>
-                  <DatePicker
+                  
+                      <DatePicker
                       selected={this.state.startDate}
                       onChange={this.handleChange}
                   />
-                  <DatePicker  
-                      selected={this.state.endDate}
-                      onChange={this.handleChange}
-                      />
-                 
                   <hr />
               </Form>
 
