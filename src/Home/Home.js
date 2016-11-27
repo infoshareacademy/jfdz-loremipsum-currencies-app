@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Heading from '../layout/Heading';
 import "./home.css";
-import "./images/money.jpg";
+import "../../public/images/money.jpg";
 
 export default class Home extends Component {
     render(){
@@ -14,11 +14,10 @@ export default class Home extends Component {
                     <p><b>Currency Exchange</b> - up to date currency exchange rates for the last month</p>
                     <p><b>My Wallet</b> - allows you to check your options if you want to exchange multiple currencies</p>
                     <p><b>User List</b> - list of app users</p>
-                </div>
+                
 
-                <div>
                     <img src="./images/money.jpg" alt=""></img>
-                </div>
+            </div>
                 <div id="power">
                     <p>POWERED TO YOU BY © <b>Lorem Ipsum</b> 2016</p>
                 </div>
