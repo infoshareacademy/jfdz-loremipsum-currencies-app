@@ -8,10 +8,10 @@ import FacebookLogin from 'react-facebook-login';
 
 const responseFacebook = (response) => {
     console.log(response);
-    localStorage.setItem(
-        document.forms.name,
-        document.forms.email
-    )
+
+    var names=[];
+    names.push(response.name)
+    localStorage.setItem("names", JSON.stringify(names));
 };
 
 export default class Header extends Component {

@@ -3,20 +3,21 @@ import Heading from '../layout/Heading';
 
 
 
-function loadUserList(){
-    var userList='';
-    for (var name in localStorage)
-        userList += (name + " ");
-    console.log(localStorage)
-    return (<div>{userList}</div>)
-}
+
+
+
 
 export default class UserList extends Component {
+
+
+
     render() {
+        let storedNames = JSON.parse(localStorage.getItem("names"))
+
         return (
             <div>
                 <Heading>User List</Heading>
-                    {loadUserList()}
+                {storedNames.map((item) => <div>{item}</div>) }
             </div>
         );
     }
