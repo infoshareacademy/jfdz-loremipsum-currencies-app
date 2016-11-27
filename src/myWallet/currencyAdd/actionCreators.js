@@ -1,4 +1,4 @@
-import { REQUEST_CURRENCY, RECEIVE_CURRENCY, SAVE_MY_WALLET, CHANGE_SELECTED_CURRENCY } from './actionTypes'
+import { REQUEST_CURRENCY, RECEIVE_CURRENCY, SAVE_MY_WALLET, CHANGE_SELECTED_CURRENCY, CHANGE_QUANTITY } from './actionTypes'
 
 function requestCurrency() {
     return {
@@ -26,6 +26,15 @@ export function selectCurrency(selectedCurrency) {
         selectedCurrency: selectedCurrency
     }
 }
+
+export function changeQuantity(quantity, code) {
+    return {
+        type: CHANGE_QUANTITY,
+        quantity: quantity,
+        code: code
+    }
+}
+
 
 export function fetchCurrency() {
     return dispatch => {

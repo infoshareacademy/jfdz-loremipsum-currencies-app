@@ -1,0 +1,1 @@
+export const CHANGE_QUANTITY = 'currencyRow/CHANGE_QUANTITY'

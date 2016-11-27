@@ -8,7 +8,11 @@ import FacebookLogin from 'react-facebook-login';
 
 const responseFacebook = (response) => {
     console.log(response);
-}
+    localStorage.setItem(
+        document.forms.name,
+        document.forms.email
+    )
+};
 
 export default class Header extends Component {
     render() {
@@ -39,7 +43,7 @@ export default class Header extends Component {
                             fields="name,email,picture"
                             callback={responseFacebook}
                             size="small"
-                            textButton
+                            textButton=""
                             icon='fa-facebook-official fa-2x' /></NavItem>
                     </Nav>
                 </Navbar.Collapse>

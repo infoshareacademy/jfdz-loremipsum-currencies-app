@@ -1,0 +1,21 @@
+#home h2 {
+    text-align: center;
+    margin: 40px;
+    color: #344c67;
+    text-decoration: double;
+}
+#home p {
+    text-align: center;
+    color: #344c67;
+}
+
+#power p {
+    text-align: center;
+    color: #344c67;
+    font-size: x-small;
+    margin: 20px;
+}
+
+#home img {
+    max-width: 100%;
+}
