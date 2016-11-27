@@ -5,7 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 
 var Example = React.createClass({
-    displayName: 'Pick Date',
+    displayName: 'Pick Start Date',
 
     getInitialState: function() {
         return {
@@ -26,6 +26,27 @@ var Example = React.createClass({
     }
 });
 
+var Example2 = React.createClass({
+    displayName: 'Pick End Date',
+
+    getInitialState: function() {
+        return {
+            endDate: moment()
+        };
+    },
+
+    handleChange: function(date) {
+        this.setState({
+            endDate: date
+        });
+    },
+
+    render: function() {
+        return <DatePicker
+            selected={this.state.endDate}
+            onChange={this.handleChange} />;
+    }
+});
 
 
 // DATE RANGE
