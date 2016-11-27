@@ -11,7 +11,7 @@ export default class CurrencyHead extends Component {
                     <th className="text-center">Course</th>
                     <th className="text-center">Count</th>
                     <th className="text-center">Value</th>
-                    <th className="action-currency-exchange"></th>
+                    {/*<th className="action-currency-exchange"></th>*/}
                 </tr>
             </thead>
         );

@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENCY, SAVE_MY_WALLET, CHANGE_SELECTED_CURRENCY } from './actionTypes'
+import { RECEIVE_CURRENCY, SAVE_MY_WALLET, CHANGE_SELECTED_CURRENCY, CHANGE_QUANTITY } from './actionTypes'
 import _ from 'underscore'
 
 const initialState = {
@@ -25,6 +25,13 @@ export default (state = initialState, action) => {
         case CHANGE_SELECTED_CURRENCY:
             return Object.assign({}, state, {
                 selectedCurrency: action.selectedCurrency
+            })
+        case CHANGE_QUANTITY:
+            return Object.assign({}, state, {
+                myCurrency: state.myCurrency.map( currency => currency.code !== action.code ? currency : {
+                    code: action.code,
+                    quantity: action.quantity
+                })
             })
         default:
             return state;

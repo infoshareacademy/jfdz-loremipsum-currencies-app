@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Button, FormGroup, FormControl } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
-import { changeQuantity } from './actionCreators'
+import { changeQuantity } from '../currencyAdd/actionCreators'
 
 const mapStateToProps = (state) => ({
 
@@ -34,7 +34,7 @@ const CurrencyRow = ({
             </form>
         </td>
         <td className="text-center">{ value * quantity } zł</td>
-        <td><Button bsStyle="danger"><FontAwesome name="trash-o" /> Delete</Button></td>
+        {/*<td><Button bsStyle="danger"><FontAwesome name="trash-o" /> Delete</Button></td>*/}
     </tr>
 )
 
