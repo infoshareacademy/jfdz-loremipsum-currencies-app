@@ -34,7 +34,7 @@ const CurrencyRow = ({
             </form>
         </td>
         <td className="text-center">{ value * quantity } zł</td>
-        <td><Button bsStyle="danger"><FontAwesome name="trash-o" /> Delete</Button></td>
+        {/*<td><Button bsStyle="danger"><FontAwesome name="trash-o" /> Delete</Button></td>*/}
     </tr>
 )
 

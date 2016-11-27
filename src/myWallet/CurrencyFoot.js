@@ -9,14 +9,14 @@ const mapStateToProps = (state) => ({
 
 const CurrencyFoot = ({ currencies, myCurrency }) => (
     <tfoot>
-        <tr>
+    {/*<tr>
             <td className="text-right" colSpan="5">Sum</td>
             <td className="text-center">
                 0
                 zł
             </td>
             <td></td>
-        </tr>
+        </tr>*/}
     </tfoot>
 )
 
