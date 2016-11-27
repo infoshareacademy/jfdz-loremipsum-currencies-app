@@ -1,19 +1,19 @@
 import { RECEIVE_EURO, REQUEST_EURO } from './actionTypes'
 
 const initialState = {
-    labels: ["a","b","c"],
+    labels: ["Date"],
     datasets: [
         {
             label: "Euro", //code: EUR
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
+            fillColor: "rgba(70,84,102,0.2)",
+            strokeColor: "rgba(70,84,102,1)",
+            pointColor: "rgba(870,84,102,1)",
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(38,186,38,1)",
-            data: []
+            //data: []
         },
-        {
+       /* {
             label: "US Dolars", //code: USD
             fillColor: "rgba(38,186,38,0.2)",
             strokeColor: "rgba(38,186,38,1)",
@@ -21,7 +21,7 @@ const initialState = {
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
-            data: []
+            //data: []
         },
         {
             label: "Great Britain Pound", //code: GBP
@@ -31,8 +31,8 @@ const initialState = {
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(191,63,63,1)",
-            data: []
-        }
+            //data: []
+        }*/
     ]
 }
 
